@@ -1,6 +1,0 @@
-En GoogleDrive:
-https://drive.google.com/drive/u/1/folders/1V5PBDXf4Oux2XYYq2nuLi29Pk2e2ssq0
-
-En OneDrive:
-- https://unabedu-my.sharepoint.com/:x:/g/personal/daniel_leon_o365_unab_edu_co/Ea8UHg-pRA9Lt5xOV_8oTfoBPeRHcWnQWVHOJC95eQ0xgQ?e=ueFJde (Product Backlog)
-- https://unabedu-my.sharepoint.com/:x:/g/personal/daniel_leon_o365_unab_edu_co/EQew5aVncJZHtPfkBbawTBwBaYdn4rj4Y7a9swUXZQQ5Cg?e=TwEoMH (Sprint Backlog)
