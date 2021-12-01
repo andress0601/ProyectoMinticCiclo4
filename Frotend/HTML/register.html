@@ -1,0 +1,154 @@
+<!-- component -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
+        type="image">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Sign up</title>
+</head>
+<!-- component -->
+
+<body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
+    style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg)">
+    <!-- Container -->
+    <div id="app">
+        <div class="container mx-auto">
+            <div class="flex justify-center px-6 my-12">
+                <!-- Row -->
+                <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+                    <!-- Col -->
+                    <div class="w-full h-auto bg-gray-400 hidden lg:inline lg:w-5/12 bg-cover rounded-l-lg"
+                        style="background-image: url('https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/6.jpg')">
+                    </div>
+                    <!--Mejorada 1 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada1.jpg
+                    Mejorada 2 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada2.jpg
+                    Mejorada 3 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada3.jpg
+                -->
+                    <!-- Col -->
+
+                    <div class="w-full lg:w-8/12 bg-yellow-700 p-5 rounded-lg lg:rounded-l-none">
+
+                        <h3 class="pt-4 mb-3 text-2xl text-center">Registrate!</h3>
+                        <form class="px-8 pt-6 pb-8 mb-4 bg-gray-900 border-8 border-green-500 rounded">
+
+                            <div class="mb-2 md:flex md:justify-between">
+                                <div class="mb-2">
+                                    <label class="block mb-2 text-sm text-white" for="name">
+                                        Name
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                        type="text" v-model="name" placeholder="Name" />
+                                </div>
+                                <div class="mb-2 ml-2">
+                                    <label class="block mb-2 text-sm text-white  " for="lastN">
+                                        Last Name
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                       type="text" v-model="lastNames" placeholder="lastName" />
+                                </div>
+                            </div>
+                            <div class="mb-2 md:flex md:justify-between">
+                                <div class="mb-2">
+                                    <label class="block mb-2 text-sm text-white  " for="cellPhone">
+                                        Cell Phone
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                         type="text" v-model="cellPhone" placeholder="Cell Phone" />
+                                </div>
+                                <div class="mb-2 ml-2">
+                                    <label class="block mb-2 text-sm text-white " for="username">
+                                        Username
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                        type="text" v-model="username" placeholder="Username" />
+                                </div>
+                            </div>
+
+                            <div class="mb-4 md:flex md:justify-between">
+                                <div class="mb-2  md:mb-0">
+                                    <label class="block mb-2 text-sm text-white" for="documento">
+                                        Documento
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight  border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                        type="password" placeholder="********" v-model="documento" />
+                                    <!-- <p class="text-xs italic text-red-500">Please write your document.</p> -->
+                                </div>
+                                <div class="md:ml-2 mb-4">
+                                    <label class="block mb-2 text-sm text-white" for="c_password">
+                                        Confirm Document
+                                    </label>
+                                    <input
+                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                         type="password" placeholder="********"  />
+                                </div>
+                            </div>
+
+                            <h1 class="text-white mb-4">INFORMACIÓN ESTACIONAMIENTO</h1>
+                            <div class="mb-4 ">
+                                <label class="block mb-2 text-sm text-white  " for="Placa">
+                                    Placa Vehículo
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                    type="text" placeholder="Placa Vehículo" />
+                            </div>
+                            <div class="mb-4 ">
+                                <label class="block mb-2 text-sm text-white  " for="Modelo">
+                                    Modelo
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                     type="text" placeholder="Modelo" />
+                            </div>
+                            <div class="mb-4 ">
+                                <label class="block mb-2 text-sm text-white  " for="colorM">
+                                    Color
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                     type="text" placeholder="Color" />
+                            </div>
+                            <div class="mb-4 text-center">
+                                <input
+                                    class="border-2 border-green-500  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1"
+                                    type="button" value="Sign Up" v-on:click="guardarCliente"></input>
+                            </div>
+                            <hr class="mb-6 border-t" />
+
+                            <!-- <div class="text-center">
+                            <a
+                                class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                                href="./index.html"
+                            >
+                                Already have an account? Login!
+                            </a>
+                        </div> -->
+                            <div class="text-center">
+                                <label
+                                    class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset inline-block ml-1"
+                                    href="#" to="/register">
+                                    Ya tienes cuenta? Ingresa!</label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/sweetalert2@11"></script>
+
+</html>

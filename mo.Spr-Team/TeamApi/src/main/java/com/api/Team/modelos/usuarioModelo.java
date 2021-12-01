@@ -1,30 +1,31 @@
 
 package com.api.Team.modelos;
 
-import javax.persistence.Id;
 
 /**
- *
- * @author admin
- */
-public class usuarioModelo {
-    
-    @Id
-   
-    private Long id;
-    private String name;
-    private String lastNames;
-    private String cellPhone;
-    private String username;
-    private int document;
-   
-    public long getId() {
+ *public long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
+    * 
+    *  @Id
+   
+    private Long id;
+ * @author admin
+ */
+public class usuarioModelo {
+    
+   
+    private String name;
+    private String lastNames;
+    private String cellPhone;
+    private String username;
+    private int documento;
+   
+    
 
     public String getName() {
         return name;
@@ -58,13 +59,15 @@ public class usuarioModelo {
         this.username = username;
     }
 
-    public int getDocument() {
-        return document;
+    public int getDocumento() {
+        return documento;
     }
 
-    public void setDocument(int document) {
-        this.document = document;
+    public void setDocumento(int documento) {
+        this.documento = documento;
     }
+
+   
 
     
 
