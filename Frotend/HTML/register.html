@@ -84,12 +84,12 @@
                                     <!-- <p class="text-xs italic text-red-500">Please write your document.</p> -->
                                 </div>
                                 <div class="md:ml-2 mb-4">
-                                    <label class="block mb-2 text-sm text-white" for="c_password">
+                                    <label class="block mb-2 text-sm text-white" for="documentoC">
                                         Confirm Document
                                     </label>
                                     <input
                                         class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                         type="password" placeholder="********"  />
+                                         type="password" placeholder="********" v-model="documentoC" >
                                 </div>
                             </div>
 
@@ -100,7 +100,7 @@
                                 </label>
                                 <input
                                     class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    type="text" placeholder="Placa Vehículo" />
+                                    type="text" placeholder="Placa Vehículo" v-model="placaVeh" />
                             </div>
                             <div class="mb-4 ">
                                 <label class="block mb-2 text-sm text-white  " for="Modelo">
@@ -108,20 +108,20 @@
                                 </label>
                                 <input
                                     class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                     type="text" placeholder="Modelo" />
+                                     type="text" placeholder="Modelo" v-model="modelo" />
                             </div>
                             <div class="mb-4 ">
-                                <label class="block mb-2 text-sm text-white  " for="colorM">
+                                <label class="block mb-2 text-sm text-white  ">
                                     Color
                                 </label>
                                 <input
                                     class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                     type="text" placeholder="Color" />
+                                     type="text" placeholder="Color" v-model="color" />
                             </div>
                             <div class="mb-4 text-center">
-                                <input
+                                <button @click.prevent=" guardarCliente()"
                                     class="border-2 border-green-500  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1"
-                                    type="button" value="Sign Up" v-on:click="guardarCliente"></input>
+                                  >Sign Up</button>
                             </div>
                             <hr class="mb-6 border-t" />
 

@@ -24,6 +24,11 @@ public class usuarioModelo {
     private String cellPhone;
     private String username;
     private int documento;
+    private int documentoC;
+    private String placaVeh;
+    private String modelo;
+    private String color;
+    public String error;
    
     
 
@@ -67,6 +72,39 @@ public class usuarioModelo {
         this.documento = documento;
     }
 
+    public int getDocumentoC() {
+        return documentoC;
+    }
+
+    public void setDocumentoC(int documentoC) {
+        this.documentoC = documentoC;
+    }
+    
+    
+
+    public String getPlacaVeh() {
+        return placaVeh;
+    }
+
+    public void setPlacaVeh(String placaVeh) {
+        this.placaVeh = placaVeh;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
    
 
     

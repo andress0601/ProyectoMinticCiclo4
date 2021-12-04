@@ -12,11 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.api.Team.repositorios.usuarioRepo;
 
+
 @Service
  
 public class usuarioServicio{
     @Autowired
     private usuarioRepo repo;//objeto
+    private usuarioModelo people;
+    
     
  
     
@@ -49,5 +52,33 @@ public class usuarioServicio{
         return repo.findByName(name);
     }
     
-   
+//    public boolean validar(){
+//        boolean valid= false;
+//        
+//        if(("".equals(this.people.getName())) |
+//            ("".equals(this.people.getLastNames())) |
+//                ("".equals(this.people.getCellPhone())) |
+//                ("".equals(this.people.getUsername())) |
+//                ("".equals(this.people.getDocumento())) |
+//                ("".equals(this.people.getDocumentoC())) |
+//                ("".equals(this.people.getPlacaVeh())) |
+//                ("".equals(this.people.getModelo())) |
+//                ("".equals(this.people.getColor()))
+//                
+//                ){
+//            valid=false;
+//            this.people.error = alert("Completa Correctamente");
+//        }else if(this.people.getDocumento() != this.people.getDocumentoC()){
+//            this.people.error = alert("No coinciden documentos");
+//        }else{
+//            valid=true;
+//        }
+//        return valid;
+//    }
+//
+//    private String alert(String completa_Correctamente) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+  
 }
