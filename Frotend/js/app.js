@@ -12,9 +12,8 @@ new Vue({
             placaVeh: "",
             modelo: "",
             color: "",
-            // datosConsulta:{},
-
         }
+
     },
     methods: {
         guardarCliente() {
@@ -96,4 +95,4 @@ new Vue({
     }
 
 
-})
+});
