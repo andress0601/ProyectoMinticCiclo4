@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data() {
         return {
-
+            espacios: 120,        
             name: "",
             lastNames: "",
             cellPhone: "",

@@ -34,6 +34,7 @@ public class usuarioServicio{
     }
     
     public boolean deleteCliente(Long id){
+        /*
         if(repo.existsById(id)){
             repo.deleteById(id);
             return true;
@@ -41,10 +42,11 @@ public class usuarioServicio{
         else{
             return false;
         }
-        
+        */
+        return false;
     }
     
-    public Optional<usuarioModelo> busquedaClienteid(Long id){
+    public Optional<usuarioModelo> busquedaClienteid(String id){
         return repo.findById(id);//es opcional ya que si no encuentra manda un null
     }
     

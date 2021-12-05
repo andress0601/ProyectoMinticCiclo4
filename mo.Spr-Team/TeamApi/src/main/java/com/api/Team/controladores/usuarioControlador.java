@@ -48,7 +48,7 @@ public class usuarioControlador {
     
     @GetMapping(path = "/{id}")//búsqueda
     
-    public Optional<usuarioModelo> busquedaClienteId(@PathVariable("id")Long id){
+    public Optional<usuarioModelo> busquedaClienteId(@PathVariable("id")String id){
         return serv.busquedaClienteid(id);
     }
 

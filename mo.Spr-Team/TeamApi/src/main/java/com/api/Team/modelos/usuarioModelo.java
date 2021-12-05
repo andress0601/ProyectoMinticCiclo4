@@ -18,7 +18,7 @@ package com.api.Team.modelos;
  */
 public class usuarioModelo {
     
-   
+   private String id;
     private String name;
     private String lastNames;
     private String cellPhone;
@@ -29,7 +29,28 @@ public class usuarioModelo {
     private String modelo;
     private String color;
     public String error;
-   
+/*
+    public usuarioModelo(String name, String lastNames, String cellPhone, String username, int documento, int documentoC, String placaVeh, String modelo, String color, String error) {
+        this.name = "Juan";
+        this.lastNames = "Pedraza";
+        this.cellPhone = "5555555";
+        this.username = "JuPe55";
+        this.documento = 123456789;
+        this.documentoC = 123456789;
+        this.placaVeh = "abc123";
+        this.modelo = "2101";
+        this.color = "blanco";
+        this.error = "Que error jajajaj";
+    }
+  */ 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     
 
     public String getName() {
@@ -37,6 +58,13 @@ public class usuarioModelo {
     }
 
     public void setName(String name) {
+        /*
+        if(!name.equals(" ")){
+            this.name = name;
+        }else{
+            this.name = "Null";
+        }
+        */
         this.name = name;
     }
 
