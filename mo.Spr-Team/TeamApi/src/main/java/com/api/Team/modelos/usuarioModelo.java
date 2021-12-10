@@ -19,30 +19,20 @@ package com.api.Team.modelos;
 public class usuarioModelo {
     
    private String id;
-    private String name;
-    private String lastNames;
+    
     private String cellPhone;
-    private String username;
     private int documento;
     private int documentoC;
     private String placaVeh;
     private String modelo;
     private String color;
-    public String error;
-/*
-    public usuarioModelo(String name, String lastNames, String cellPhone, String username, int documento, int documentoC, String placaVeh, String modelo, String color, String error) {
-        this.name = "Juan";
-        this.lastNames = "Pedraza";
-        this.cellPhone = "5555555";
-        this.username = "JuPe55";
-        this.documento = 123456789;
-        this.documentoC = 123456789;
-        this.placaVeh = "abc123";
-        this.modelo = "2101";
-        this.color = "blanco";
-        this.error = "Que error jajajaj";
-    }
-  */ 
+  
+
+//    public usuarioModelo(String username, int documento) {
+//        this.name = "";
+//        this.documento= 11;
+//   }
+//  
 
     public String getId() {
         return id;
@@ -53,28 +43,20 @@ public class usuarioModelo {
     }
     
 
-    public String getName() {
-        return name;
-    }
+  
 
-    public void setName(String name) {
-        /*
-        if(!name.equals(" ")){
-            this.name = name;
-        }else{
-            this.name = "Null";
-        }
-        */
-        this.name = name;
-    }
+//    public void setUsername(String username) {
+//        /*
+//        if(!name.equals(" ")){
+//            this.name = name;
+//        }else{
+//            this.name = "Null";
+//        }
+//        */
+//        this.username = username;
+//    }
 
-    public String getLastNames() {
-        return lastNames;
-    }
-
-    public void setLastNames(String lastNames) {
-        this.lastNames = lastNames;
-    }
+    
 
     public String getCellPhone() {
         return cellPhone;
@@ -84,13 +66,7 @@ public class usuarioModelo {
         this.cellPhone = cellPhone;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  
 
     public int getDocumento() {
         return documento;

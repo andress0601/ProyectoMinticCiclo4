@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins= "*",methods = { RequestMethod.POST}) //Para que me encuentre y no se distorcione en buscar a traves de los datos que mando desde vue
+@CrossOrigin(origins= "*",methods = { RequestMethod.GET  ,RequestMethod.POST}) //Para que me encuentre y no se distorcione en buscar a traves de los datos que mando desde vue
 @RequestMapping("/cliente")
 public class usuarioControlador {
     @Autowired
@@ -53,11 +53,11 @@ public class usuarioControlador {
     }
 
  
-    @GetMapping(path="/buscar/{name}")//búsqueda especifíca
-    public ArrayList<usuarioModelo> obtenerporName(@PathVariable("name")String name){
-        return serv.obtenerClientePorName(name);
-    }
-    
+//    @GetMapping(path="/buscar/{name}")//búsqueda especifíca
+//    public ArrayList<usuarioModelo> obtenerporName(@PathVariable("name")String name){
+//        return serv.obtenerClientePorName(name);
+//    }
+//    
     
     
     

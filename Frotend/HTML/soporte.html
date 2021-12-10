@@ -8,197 +8,63 @@
     <link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
         type="image">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Home</title>
-
-    <style>
-        /*         
-        
-         *{
-                  margin: 0;  
-                  padding: 0;
-                }
-
-        main{
-            grid-template-columns: 1fr 1fr ;
-            grid-template-rows: 1fr 5fr;
-                    border: 2rem solid black;
-                   
-                    background-color: rgb(230, 189, 8);
-                    width: 80%;
-                    
-                    margin: 128px auto;
-                    padding: 128px;
-
-
-                }
-
-        main h1{
-            grid-template-columns: 1fr 1fr ;
-            grid-template-rows: 1fr 1fr;
-            text-decoration: black;
-            text-align:top;
-            font-size: 5rem;
-           
-            display: inline;
-        }         */
-    </style>
-
+    <title>welcome</title>
 </head>
 
 <body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
     style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg)">
 
-    <header>
+
+    <div id="componentes">
+        <ul>
+            <div class="w-full lg:w-3/12 bg-white p-5 rounded-lg lg:rounded-l-none">
+            <li class="border-4 border-gray-900  transition duration-200 mb-3 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-green-200  " 
+            style="color: rgb(13, 92, 238); font-family: 'Times New Roman', Times, serif;
+                   font-size: 20pt;  border-color: chartreuse;" @click="menu=1">TARIFAS</li>
+            
+            <li  class="border-4 border-gray-900  transition duration-200 mb-3 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-green-200 " 
+            style="color: rgb(13, 92, 238); font-family: 'Times New Roman', Times, serif;
+                   font-size: 20pt;  border-color: chartreuse;" @click="menu=2">
+                LUGARES</li>
+
+            <li  class="border-4 border-gray-900  transition duration-200 mb-3 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-green-200 " 
+            style="color: rgb(13, 92, 238); font-family: 'Times New Roman', Times, serif;
+                   font-size: 20pt;  border-color: chartreuse;" @click="menu=3">
+                LOGIN</li>
 
 
-    </header>
+            <li  class="border-4 border-gray-900  transition duration-200 mb-3 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-green-200 " 
+            style="color: rgb(13, 92, 238); font-family: 'Times New Roman', Times, serif;
+                   font-size: 20pt;  border-color: chartreuse;" @click="menu=4">
+                REGISTRO</li>
 
-    <div class="container mx-auto">
-        <div class="flex justify-center px-40 my-12 py-10 ">
+            <li  class="border-4 border-gray-900  transition duration-200 mb-3 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-green-200 " 
+            style="color: rgb(13, 92, 238); font-family: 'Times New Roman', Times, serif;
+                   font-size: 20pt;  border-color: chartreuse;" @click="menu=5">
+                FACTURA</li>
 
-            <div class="w-full xl:w-3/4 lg:w-10/12 flex">
-
-                <!--min-h-screen flex flex-col justify-center sm:py-2-->
-                <div class="px-7 py-3 bg-red-600">
-
-                    <div class="px-5 py-7 bg-yellow-400">
-                        <h1 style="font-size: 40pt;" class="text-white text-center  md:mb-4 bg-gray-900 hover:bg-gray-500">TARIFAS PARQUEADERO</h1>
-
-                        <div class="mb-4 md:flex md:justify-between">
-                            <div class="mb-4 md:mr-3 md:mb-0">
-                                <label
-                                    class=" w-full  px-20 py-2 pt-4  inline-block mb-2 text-center text-sm font-bold text-black hover:bg-gray-500"
-                                    for="firstName">
-                                    VEHÍCULO
-                                </label>
-                            </div>
-                            
-                            <div class="md:ml-2 mr-2 mb-0">
-                                <label
-                                    class=" w-full  px-16 py-2 pt-4  inline-block mb-2  text-sm font-bold text-black hover:bg-gray-500"
-                                    for="firstName">
-                                    H/DÍA  --  H/NOCHE
-                                </label>
-
-                            </div>
-                        </div>
-
-                        <div class="mb-4 md:flex md:justify-between">
-                            <div class="mb-4 md:mr-0 md:mb-0">
-                                <button
-                                    class=" w-full bg-white px-16 py-6  block mb-2  text-sm font-bold text-gray-700 hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Automoviles
-                                </button>
-
-                                <button
-                                    class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Camionetas
-
-                                </button>
-                                
-                                <button
-                                    class=" w-full block  mb-2 text-sm bg-white px-12 py-6 font-bold text-gray-700 hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Busetas
-
-                                </button>
-                                <button
-                                    class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Camperos
-
-                                </button>
-
-                                <button
-                                    class=" w-full block  mb-2 text-sm bg-white px-12 py-6 font-bold text-black hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Motos
-
-                                </button>
-                                <button
-                                    class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Bicicletas
-
-                                </button>
-                            </div>
-                
-                                
-                
-                                
+            
+            </div>
+        </ul>
+      
+            
+            <tarifa  v-if="menu==1"></tarifa>
+            <lugares v-if="menu==2"></lugares> 
+            <login v-if="menu==3"></login>
+            <registro v-if="menu==4"></registro>
+            <factura v-if="menu==5"></factura>   
         
 
-                            
-                            <div class="md:ml-0 mb-8 mr-3 mb-0">
-                                <button
-                                    class="w-full block  mb-2 text-sm bg-white px-24 py-6 font-bold text-gray-700 hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 2700
-                                </button>
-                               
-                                <button
-                                    class="w-full block mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 2800
-                                </button>
-                                
-                                <button
-                                    class="w-full block  mb-2 text-sm bg-white px-24 py-6 font-bold text-black hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 3000
-                                </button>
-                                
-                                <button
-                                    class="w-full block  mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 3200
-                                </button>
-                                
-                                
-                                <button
-                                    class="w-full block mb-2 text-sm bg-white px-24 py-6 font-bold text-black hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 1300
-                                </button>
-                              
-                                <button
-                                    class="w-full block  mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 700
-                                </button>
-                                
-                                
-                            </div>
-                            
-                        </div>
-                        <div class="mb-6 ml-3 mr-16 md:flex md:justify-between">
-                            <div>
-                                <p></p>
-                            </div>
-                            <div>
-                                <button
-                                    class="w-full inline rounded-full mb-2 text-sm bg-gray-900 px-40 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    QUIERO PARQUEAR 
-                                </button>
-                               
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-
+    </div>
 
 
 </body>
 
-</footer>
 
-<!-- <script src="js/vue.js"></script>
-<script src="js/app.js"></script>
-<script src="js/sweetalert2@11"></script> -->
+
+<script src="../js/vue.js"></script>
+<!-- <script src="../HTML/factura.js"></script> -->
+<script src="../js/components.js"></script>
+<script src="../js/sweetalert2@11"></script>
 
 </html>

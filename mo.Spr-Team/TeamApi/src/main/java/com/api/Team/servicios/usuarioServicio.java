@@ -47,12 +47,12 @@ public class usuarioServicio{
     }
     
     public Optional<usuarioModelo> busquedaClienteid(String id){
-        return repo.findById(id);//es opcional ya que si no encuentra manda un null
+        return repo.findById(id);//lo utilizamos para traer toda la información específica
     }
     
-    public ArrayList<usuarioModelo> obtenerClientePorName(String name){
-        return repo.findByName(name);
-    }
+//    public ArrayList<usuarioModelo> obtenerClientePorName(String name){
+//        return repo.findByName(name);
+//    }
     
 //    public boolean validar(){
 //        boolean valid= false;
