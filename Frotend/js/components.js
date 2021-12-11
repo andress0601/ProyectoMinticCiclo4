@@ -398,46 +398,22 @@ Vue.component('lugares', {
         }
     },
     template: `
-    <div> 
-    <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
-        type="image">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Lugares</title>
 
+ 
+
+    <div style="   
     
-</head>
-<style>
-
-
-    .wrapper {
         display: grid;
         grid-template-columns: repeat(15, 1fr);
         grid-gap: 10px;
         grid-auto-rows: minmax(100px, auto);
-    }
-
-    .car {
-        background-color: powderblue;
-        transition: background-color .5s;
-    }
-
-    .car:hover{
-        background-color: gold;
-    }
-
-</style>
-<body>
-
-    <!-- carrito -->
-
-    <div id="app" class="wrapper">
-        <div v-for= "car in espacios" class="car">
-          One
-          <svg
+">
+        <div v-for= "car in espacios" style="
+            background-color: powderblue;
+            transition: background-color .5s;
+        ">
+        One
+        <svg
         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
         xmlns="http://www.w3.org/2000/svg"
@@ -881,14 +857,15 @@ Vue.component('lugares', {
       >
         </svg>
         </div>
+        
     </div>
+
     
-</body>
-    
-    </div>
 
 
     `,
+    
+    
     methods: {
 
     }
@@ -945,7 +922,7 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
                         <div class="mb-4">
                             <label class="block mb-2 text-sm  " for="email">
-                                Username
+                                Username {{prueba.id}}
                             </label>
                             <input
                                 class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
@@ -1000,9 +977,10 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
             var endpoint = 'http://localhost:8080/cliente/' + this.id;
             var opciones = { method: 'GET' };
-
-
+            
             fetch(endpoint, opciones).then(async response => {
+                this.prueba = await response.json();
+
                 if ((this.id == "") |
                     (this.documento == "")) {
                     Swal.fire({
@@ -1014,7 +992,7 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
                 }
 
-                else if (this.id != this.id) {
+                else if (!this.prueba) {
 
                     Swal.fire({
                         icon: 'error',
@@ -1022,16 +1000,14 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                         text: '¡No se idenfica ese id!',
                     });
 
-                } else if (this.documento != this.documento) {
+                } else if (this.documento != this.prueba.documento) {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: '¡documento no encontrado!',
                     });
                 } else {
-                    this.prueba = await response.json();
-
-
+                    
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
