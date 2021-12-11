@@ -18,22 +18,29 @@ package com.api.Team.modelos;
  */
 public class usuarioModelo {
     
-   private String id;
-    
+  
+
     private String cellPhone;
-    private int documento;
-    private int documentoC;
+    private String username;
+     private String id;//documento
+    private String documentoC;
     private String placaVeh;
     private String modelo;
     private String color;
-  
+
+    public String getUsername() {
+        return username;
+    }
 
 //    public usuarioModelo(String username, int documento) {
 //        this.name = "";
 //        this.documento= 11;
 //   }
-//  
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+//
     public String getId() {
         return id;
     }
@@ -66,21 +73,13 @@ public class usuarioModelo {
         this.cellPhone = cellPhone;
     }
 
-  
+ 
 
-    public int getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(int documento) {
-        this.documento = documento;
-    }
-
-    public int getDocumentoC() {
+    public String getDocumentoC() {
         return documentoC;
     }
 
-    public void setDocumentoC(int documentoC) {
+    public void setDocumentoC(String documentoC) {
         this.documentoC = documentoC;
     }
     

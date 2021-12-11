@@ -46,19 +46,14 @@ public class usuarioControlador {
         return serv.deleteCliente(id);
     }
     
-    @GetMapping(path = "/{id}")//búsqueda
-    
-    public Optional<usuarioModelo> busquedaClienteId(@PathVariable("id")String id){
+    @GetMapping(path = "/buscar/{id}")//búsqueda
+     
+    public ArrayList<usuarioModelo> busquedaClienteId(@PathVariable("id")String id){
         return serv.busquedaClienteid(id);
     }
-
- 
-//    @GetMapping(path="/buscar/{name}")//búsqueda especifíca
-//    public ArrayList<usuarioModelo> obtenerporName(@PathVariable("name")String name){
-//        return serv.obtenerClientePorName(name);
-//    }
-//    
     
+
+
     
     
 }

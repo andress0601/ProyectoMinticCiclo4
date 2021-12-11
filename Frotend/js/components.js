@@ -16,38 +16,7 @@ Vue.component('tarifa', {
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Home</title>
 
-    <style>
-        /*         
-        
-         *{
-                  margin: 0;  
-                  padding: 0;
-                }
-
-        main{
-            grid-template-columns: 1fr 1fr ;
-            grid-template-rows: 1fr 5fr;
-                    border: 2rem solid black;
-                   
-                    background-color: rgb(230, 189, 8);
-                    width: 80%;
-                    
-                    margin: 128px auto;
-                    padding: 128px;
-
-
-                }
-
-        main h1{
-            grid-template-columns: 1fr 1fr ;
-            grid-template-rows: 1fr 1fr;
-            text-decoration: black;
-            text-align:top;
-            font-size: 5rem;
-           
-            display: inline;
-        }         */
-    </style>
+    
 
 </head>
 
@@ -196,7 +165,9 @@ Vue.component('tarifa', {
             </div>
         </div>
 
-
+      
+    </div>
+    </body>
     </div>
     `,
     methods: {
@@ -421,44 +392,48 @@ Vue.component('factura', {
     methods: {
         traerDatos() {
 
-            var endpoint = 'http://localhost:8080/toPrint/buscar/' +this.name;
-            var opciones = { method: 'GET' };
-
             if (this.name == "") {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: '¡completa el campo!',
+                    text: '¡llena todos los campos!',
 
                 });
+                var endpoint = 'http://localhost:8080/toPrint/buscar/' + this.name;
+                var opciones = { method: 'GET' };
 
             }
+
+
+
             fetch(endpoint, opciones).then(async response => {
                 this.guardando = await response.json();
 
-                if (!this.guardando ) {
-                    
+                if (!this.guardando) {
+
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: '¡No hay ningún resultado de tu búsqueda!',
                     });
 
-                   
-                    
                 } else {
+
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `Generando tu factura !!` + this.name,
+                        title: `Bienvenid@ !!` + this.name,
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    
+
                 }
+
             });
 
-          
+
+
+
 
         }
 
@@ -468,11 +443,12 @@ Vue.component('factura', {
 // ............LUGARES..............//
 
 Vue.component('lugares', {
-    mounted(){
+    mounted() {
         this.importar();
     },
     data() {
         return {
+            espacios: 120,
             vehiculos: {}
         }
     },
@@ -950,14 +926,14 @@ Vue.component('lugares', {
 
 
     `,
-    
-    
+
+
     methods: {
         importar() {
-            
+
             var endpoint = 'http://localhost:8080/lugares/';
             var opciones = { method: 'GET' };
-            
+
             fetch(endpoint, opciones).then(async response => {
                 this.vehiculos = await response.json();
             });
@@ -967,12 +943,12 @@ Vue.component('lugares', {
 
 // ..........LOGIN................//
 
-Vue.component('login',{
-    data(){
-        return{
-            id:"",
-            documento:"",
-            prueba:[],
+Vue.component('login', {
+    data() {
+        return {
+
+            id: "",
+            datos: []
         }
     },
 
@@ -993,7 +969,7 @@ Vue.component('login',{
 <body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
 style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg)">
 <!-- Container -->
-<div id="app">
+
 
     <div class="container mx-auto">
         <div class="flex justify-center px-6 my-12">
@@ -1016,22 +992,13 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
                         <div class="mb-4">
                             <label class="block mb-2 text-sm  " for="email">
-                                Username {{prueba.id}}
+                               ¡ Please write you document!
                             </label>
                             <input
                                 class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                v-model="id" type="text" placeholder="Username" />
+                                v-model="id" type="text" placeholder="********" />
                         </div>
 
-                        <div class="mb-4 md:mr-2 md:mb-0">
-                            <label class="block mb-2 text-sm  " for="password">
-                                Document
-                            </label>
-                            <input
-                                class="w-full px-3 py-2 mb-3 text-sm leading-tight  border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                type="password" v-model="documento" placeholder="********" />
-                            <!-- <p class="text-xs italic text-red-500">Please write your document.</p> -->
-                        </div>
 
 
                         <div class="mb-4 text-center">
@@ -1041,16 +1008,8 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                                 LOGIN
                             </button>
                         </div>
-                        <hr class="mb-6 border-t" />
 
-                        <!-- <div class="text-center">
-                        <a
-                            class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                            href="./index.html"
-                        >
-                            Already have an account? Login!
-                        </a>
-                    </div> -->
+                        
                         <div class="text-center">
                             <h3
                                 class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset inline-block ml-1">
@@ -1062,58 +1021,54 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
             </div>
         </div>
     </div>
-</div>
+
 </body>
     </div>
     `,
-    methods:{
+    // mounted(){
+    //   this.validarI();
+    //   console.log(this.validarI);
+    // },
+    methods: {
+
         validarI() {
+            if (this.id == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '¡Please write in the field!',
+                });
+            }
 
-            var endpoint = 'http://localhost:8080/cliente/' + this.id;
-            var opciones = { method: 'GET' };
+            else {
+                var endpoint = 'http://localhost:8080/cliente/buscar/' + this.id;
+                var opciones = { method: 'GET' };
 
-            if ((this.id == "") |
-                    (this.documento == "")) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: '¡llena todos los campos!',
+                fetch(endpoint, opciones).then(async response => {
 
-                    });
+                    this.datos = await response.json();
+                    console.log(this.datos);
 
-                }
-            fetch(endpoint, opciones).then(async response => {
-                this.prueba = await response.json();
+                    if (this.datos == "") {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: '¡No hay ningún resultado de tu búsqueda!',
+                        });
+                    } else {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Cliente encontrado!!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
 
-                
+                });
+            }
 
-                if (!this.prueba) {
 
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: '¡No se idenfica ese id!',
-                    });
-
-                } else if (this.documento != this.prueba.documento) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: '¡documento no encontrado!',
-                    });
-                } else {
-                    
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: `Bienvenid@ !!` + this.id,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-
-                }
-
-            });
         }
 
     }
@@ -1121,130 +1076,130 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
 //...........REGISTRO...........//
 
-Vue.component('registro',{
-    data(){
-        return{
-            id:"",
-            cellPhone:"",
-            documento:"",
-            documentoC:"",
-            placaVeh:"",
-            modelo:"",
-            color:"",
+Vue.component('registro', {
+    data() {
+        return {
+            username: "",
+            cellPhone: "",
+            id: "",
+            documentoC: "",
+            placaVeh: "",
+            modelo: "",
+            color: "",
 
         }
     },
     template: `
-            <div>
-            
-        <head>
+    <div>
+
+    <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
-            type="image">
+        <link rel="shortcut icon"
+            href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png" type="image">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
         <title>Sign up</title>
-        </head>
-        <!-- component -->
+    </head>
+    <!-- component -->
 
-        <body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
+    <body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
         style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg)">
         <!-- Container -->
-        <div id="app">
-            <div class="container mx-auto">
-                <div class="flex justify-center px-6 my-12">
-                    <!-- Row -->
-                    <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-                        <!-- Col -->
-                        <!-- <div class="w-full h-auto bg-gray-400 hidden lg:inline lg:w-5/12 bg-cover rounded-l-lg"
+
+        <div class="container mx-auto">
+            <div class="flex justify-center px-6 my-12">
+                <!-- Row -->
+                <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+                    <!-- Col -->
+                    <!-- <div class="w-full h-auto bg-gray-400 hidden lg:inline lg:w-5/12 bg-cover rounded-l-lg"
                             style="background-image: url('https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/6.jpg')"> -->
-                        </div> -->
-                        <!--Mejorada 1 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada1.jpg
+                </div> -->
+                <!--Mejorada 1 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada1.jpg
                         Mejorada 2 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada2.jpg
                         Mejorada 3 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada3.jpg
                     -->
-                        <!-- Col -->
+                <!-- Col -->
 
-                        <div class="w-full lg:w-8/12 bg-transparent p-5 rounded-lg lg:rounded-l-none">
+                <div class="w-full lg:w-8/12 bg-transparent p-5 rounded-lg lg:rounded-l-none">
 
-                            <h3 class="pt-4 mb-3 text-2xl text-center">Registrate!</h3>
-                            <form class="px-8 pt-6 pb-8 mb-4 bg-transparent border-8 border-green-500 rounded">
+                    <h3 class="pt-4 mb-3 text-2xl text-center">Registrate!</h3>
+                    <form class="px-8 pt-6 pb-8 mb-4 bg-transparent border-8 border-green-500 rounded">
 
-                                <div class="mb-2 md:flex md:justify-between">
-                                    <div class="mb-2">
-                                        <label class="block mb-2 text-sm text-white" for="username">
-                                            Username
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            type="text" v-model="id" placeholder="Username" />
-                                    </div>
-                                    <div class="mb-2">
-                                        <label class="block mb-2 text-sm text-white  " for="cellPhone">
-                                            Cell Phone
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            type="text" v-model="cellPhone" placeholder="Cell Phone" />
-                                    </div>
-                                
-                                </div>
-                                
+                        <div class="mb-2 md:flex md:justify-between">
+                            <div class="mb-2">
+                                <label class="block mb-2 text-sm text-white" for="username">
+                                    Username
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                    type="text" v-model="username" placeholder="Username" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="block mb-2 text-sm text-white  " for="cellPhone">
+                                    Cell Phone
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                    type="text" v-model="cellPhone" placeholder="Cell Phone" />
+                            </div>
 
-                                <div class="mb-4 md:flex md:justify-between">
-                                    <div class="mb-2  md:mb-0">
-                                        <label class="block mb-2 text-sm text-white" for="documento">
-                                            Documento
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight  border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            type="password" placeholder="********" v-model="documento" />
-                                        <!-- <p class="text-xs italic text-red-500">Please write your document.</p> -->
-                                    </div>
-                                    <div class="md:ml-2 mb-4">
-                                        <label class="block mb-2 text-sm text-white" for="documentoC">
-                                            Confirm Document
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            type="password" placeholder="********" v-model="documentoC" >
-                                    </div>
-                                </div>
+                        </div>
 
-                                <h1 class="text-white mb-4">INFORMACIÓN ESTACIONAMIENTO</h1>
-                                <div class="mb-4 ">
-                                    <label class="block mb-2 text-sm text-white  " for="Placa">
-                                        Placa Vehículo
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        type="text" placeholder="Placa Vehículo" v-model="placaVeh" />
-                                </div>
-                                <div class="mb-4 ">
-                                    <label class="block mb-2 text-sm text-white  " for="Modelo">
-                                        Modelo
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        type="text" placeholder="Modelo" v-model="modelo" />
-                                </div>
-                                <div class="mb-4 ">
-                                    <label class="block mb-2 text-sm text-white  ">
-                                        Color
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        type="text" placeholder="Color" v-model="color" />
-                                </div>
-                                <div class="mb-4 text-center">
-                                    <button @click.prevent=" guardarCliente()"
-                                        class="border-2 border-green-500  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1"
-                                    >Sign Up</button>
-                                </div>
-                                <hr class="mb-6 border-t" />
 
-                                <!-- <div class="text-center">
+                        <div class="mb-4 md:flex md:justify-between">
+                            <div class="mb-2  md:mb-0">
+                                <label class="block mb-2 text-sm text-white" for="documento">
+                                    Documento
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight  border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                    type="password" placeholder="********" v-model="id" />
+                                <!-- <p class="text-xs italic text-red-500">Please write your document.</p> -->
+                            </div>
+                            <div class="md:ml-2 mb-4">
+                                <label class="block mb-2 text-sm text-white" for="documentoC">
+                                    Confirm Document
+                                </label>
+                                <input
+                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                    type="password" placeholder="********" v-model="documentoC">
+                            </div>
+                        </div>
+
+                        <h1 class="text-white mb-4">INFORMACIÓN ESTACIONAMIENTO</h1>
+                        <div class="mb-4 ">
+                            <label class="block mb-2 text-sm text-white  " for="Placa">
+                                Placa Vehículo
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                type="text" placeholder="Placa Vehículo" v-model="placaVeh" />
+                        </div>
+                        <div class="mb-4 ">
+                            <label class="block mb-2 text-sm text-white  " for="Modelo">
+                                Modelo
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                type="text" placeholder="Modelo" v-model="modelo" />
+                        </div>
+                        <div class="mb-4 ">
+                            <label class="block mb-2 text-sm text-white  ">
+                                Color
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                type="text" placeholder="Color" v-model="color" />
+                        </div>
+                        <div class="mb-4 text-center">
+                            <button @click.prevent=" guardarCliente()"
+                                class="border-2 border-green-500  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1">Sign
+                                Up</button>
+                        </div>
+                        <hr class="mb-6 border-t" />
+
+                        <!-- <div class="text-center">
                                 <a
                                     class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
                                     href="./index.html"
@@ -1252,27 +1207,25 @@ Vue.component('registro',{
                                     Already have an account? Login!
                                 </a>
                             </div> -->
-                                <div class="text-center">
-                                    <label
-                                        class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset inline-block ml-1"
-                                        href="#" to="/register">
-                                        Ya tienes cuenta? Ingresa!</label>
-                                </div>
-
-                            </form>
+                        <div class="text-center">
+                            <label
+                                class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset inline-block ml-1">
+                                Ya tienes cuenta? Ingresa!</label>
                         </div>
-                    </div>
+
+                    </form>
                 </div>
             </div>
         </div>
-        </body>
-    </div>
+    </body>
+</div>
+
     `,
-    methods:{
+    methods: {
         guardarCliente() {
-            if ((this.id == "") |
+            if ((this.username == "") |
                 (this.cellPhone == "") |
-                (this.documento == "") |
+                (this.id == "") |
                 (this.documentoC == "") |
                 (this.placaVeh == "") |
                 (this.modelo == "") |
@@ -1288,7 +1241,7 @@ Vue.component('registro',{
 
 
 
-            } else if (this.documento != this.documentoC) {
+            } else if (this.id != this.documentoC) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -1302,7 +1255,7 @@ Vue.component('registro',{
                 const opciones = {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ id: this.id, cellPhone: this.cellPhone, documento: this.documento, documentoC: this.documentoC, placaVeh: this.placaVeh, modelo: this.modelo, color: this.color })
+                    body: JSON.stringify({ username: this.username, cellPhone: this.cellPhone, id: this.id, documentoC: this.documentoC, placaVeh: this.placaVeh, modelo: this.modelo, color: this.color })
 
                 };
 
@@ -1320,7 +1273,7 @@ Vue.component('registro',{
                 });
             }
         },
-       
+
     }
 
 })

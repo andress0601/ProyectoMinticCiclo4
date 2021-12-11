@@ -46,12 +46,11 @@ public class usuarioServicio{
         return false;
     }
     
-    public Optional<usuarioModelo> busquedaClienteid(String id){
+    public ArrayList<usuarioModelo> busquedaClienteid(String id){
         return repo.findById(id);//lo utilizamos para traer toda la información específica
     }
     
-//   
-    
+
 //    public boolean validar(){
 //        boolean valid= false;
 //        

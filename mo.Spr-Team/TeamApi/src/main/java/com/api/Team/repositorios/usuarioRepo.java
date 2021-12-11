@@ -5,12 +5,13 @@
  */
 package com.api.Team.repositorios;
 import com.api.Team.modelos.usuarioModelo;
+import java.util.ArrayList;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface usuarioRepo extends MongoRepository<usuarioModelo, String>{
-
+public interface usuarioRepo extends MongoRepository<usuarioModelo, Long>{
+  ArrayList<usuarioModelo> findById(String id);
     
 }
