@@ -392,9 +392,12 @@ Vue.component('factura', {
 // ............LUGARES..............//
 
 Vue.component('lugares', {
+    mounted(){
+        this.importar();
+    },
     data() {
         return {
-            espacios: 120,
+            vehiculos: {}
         }
     },
     template: `
@@ -408,12 +411,19 @@ Vue.component('lugares', {
         grid-gap: 10px;
         grid-auto-rows: minmax(100px, auto);
 ">
-        <div v-for= "car in espacios" style="
-            background-color: powderblue;
-            transition: background-color .5s;
+        <div 
+            v-for="(unLugar, llave) in vehiculos"
+            v-bind:key="llave"
+            v-bind:value="llave"
+            v-if="unLugar.estado === true"
+            style="
+            background-color: rgb(0, 255, 55);
+            transition: background-color .10s;
         ">
-        One
-        <svg
+        
+        <p>{{unLugar.lugar}} </p>
+
+        <svg 
         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
         xmlns="http://www.w3.org/2000/svg"
@@ -867,7 +877,15 @@ Vue.component('lugares', {
     
     
     methods: {
-
+        importar() {
+            
+            var endpoint = 'http://localhost:8080/lugares/';
+            var opciones = { method: 'GET' };
+            
+            fetch(endpoint, opciones).then(async response => {
+                this.vehiculos = await response.json();
+            });
+        }
     }
 })
 
@@ -1015,6 +1033,7 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                         showConfirmButton: false,
                         timer: 1500
                     });
+
                 }
 
             });
