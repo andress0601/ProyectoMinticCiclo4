@@ -10,20 +10,22 @@ package com.api.Team.modelos;
  * @author admin
  */
 public class facturaModelo {
-    private String categoria;
+    private String name;
     private String medioPago;
     private String hEntrada;
     private String hSalida;
     private double descuento;
     private double total;
 
-    public String getCategoria() {
-        return categoria;
+    public String getName() {
+        return name;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setName(String name) {
+        this.name = name;
     }
+
+  
 
     public String getMedioPago() {
         return medioPago;

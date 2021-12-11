@@ -210,55 +210,67 @@ Vue.component('tarifa', {
 Vue.component('factura', {
     data() {
         return {
-
+            name: "",
+            medioPago: "",
+            hEntrada: "",
+            hSalida: "",
+            descuento: 0,
+            total: 0,
+            guardando: [],
         }
     },
     template: `<div>
-    <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
-        type="image">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Factura</title>
+<link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
+    type="image">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<title>Factura</title>
 </head>
 
 <body>
-    
-        <div class="bg-fixed bg-cover bg-center bg-no-repeat h-full w-full lg:p-8" style="
-      background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg);
-    ">
-            <div class="container mx-auto">
-                <div class="min-h-screen flex flex-col justify-center sm:py-4">
-                    <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
-                        <div class="px-8 py-12 bg-white w-full">
-                            <div class="mb-4 md:mr-2 md:mb-0">
-                                <h1>------------------------------------------</h1>
-                                <p class="italic focus:underline font-bold
-              transition
+
+
+
+
+    <div class="bg-fixed bg-cover bg-center bg-no-repeat h-full w-full lg:p-8"
+        style="
+      background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg);     ">
+        <div class="container mx-auto">
+            <div class="min-h-screen flex flex-col justify-center sm:py-4">
+                <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
+                    <div class="px-8 py-12 bg-white w-full">
+                        <div class="mb-4 md:mr-2 md:mb-0">
+                            <h1>------------------------------------------</h1>
+                            <p class="italic focus:underline font-bold
+             transition
               duration-200
-              mx-5
-              px-5
-              py-4
-              cursor-pointer
-              font-normal
-              text-sm
-              rounded-lg
-              text-black
-              hover:bg-blue-300
-              focus:outline-none
-              focus:bg-gray-200
-              focus:ring-2
+               mx-5
+               px-5
+               py-4
+               cursor-pointer
+               font-normal
+               text-sm
+               rounded-lg
+               text-black
+               hover:bg-blue-300
+               focus:outline-none
+               focus:bg-gray-200
+               focus:ring-2
               focus:ring-gray-400
               focus:ring-opacity-50
               ring-inset
-              inline-block
+               inline-block
               ml-1">
-                                    PARQUEADERO EL SABOR DE NUESTRA TIERRA
-                                </p>
-                                <br />
+                                PARQUEADERO EL SABOR DE NUESTRA TIERRA
+                            </p>
+                            <br />
+                           
+
                                 <label class="block mb-0 text-sm text-left text-gray-700">
                                     <div class="flex space-x-9 italic">
                                         <div>FECHA: </div>
@@ -273,7 +285,8 @@ Vue.component('factura', {
                                 </div>
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700">
-                                <div class="font-semibold">NOMBRE CLIENTE:</div>
+                                <div class="font-semibold" >NOMBRE CLIENTE:</div>
+                                <div></div>
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700">
                                 <div>
@@ -282,15 +295,15 @@ Vue.component('factura', {
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700">
                                 <div class="flex space-x-2">
-                                    <div class="font-semibold">IT.CC:</div>
+                                    <div  class="font-semibold">IT.CC:</div>
                                     <div></div>
                                 </div>
                             </label>
 
                             <label class="block mb-6 text-sm text-left text-gray-700">
                                 <div class="flex space-x-2">
-                                    <div class="font-semibold">TEL CEL:</div>
-                                    <div></div>
+                                    <div  class="font-semibold">TEL CEL:</div>
+                                    <div> </div>
                                 </div>
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700" for="firstName">
@@ -306,14 +319,18 @@ Vue.component('factura', {
 
                             <label class="block mb-0 text-sm text-left text-gray-700">
                                 <div class="font-semibold">PLACA :</div>
+                                <div></div>
                             </label>
 
                             <label class="block mb-0 text-sm text-left text-gray-700">
                                 <div class="font-semibold">MODELO :</div>
+                                <div></div>
+
                             </label>
 
                             <label class="block mb-0 text-sm text-left text-gray-700">
                                 <div class="font-semibold">COLOR :</div>
+                                <div></div>
                             </label>
                             <label class="block mb-6 text-sm text-left text-gray-700">
                                 <div>
@@ -373,6 +390,20 @@ Vue.component('factura', {
                                     HA SIDO UN GUSTO ATENDERTE ¡GRACIAS!
                                 </h1>
                             </label>
+                            <label class="block mb-2 text-sm text-white">
+                                búsqueda
+                    
+                            </label>
+                            <input
+                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                type="text" v-model="name" placeholder="name" />
+                            <div class="mb-4 text-center">
+                    
+                                <button @click.prevent="traerDatos()"
+                                    class="border-2 border-gray-900  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1">
+                    
+                                    validar
+                                </button>
 
                         </div>
                     </div>
@@ -380,11 +411,56 @@ Vue.component('factura', {
             </div>
 
         </div>
+    </div>
     
+
+
 </body>
     </div>
     `,
     methods: {
+        traerDatos() {
+
+            var endpoint = 'http://localhost:8080/toPrint/buscar/' +this.name;
+            var opciones = { method: 'GET' };
+
+            if (this.name == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '¡completa el campo!',
+
+                });
+
+            }
+            fetch(endpoint, opciones).then(async response => {
+                this.guardando = await response.json();
+
+                if (!this.guardando ) {
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: '¡No hay ningún resultado de tu búsqueda!',
+                    });
+
+                   
+                    
+                } else {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `Generando tu factura !!` + this.name,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    
+                }
+            });
+
+          
+
+        }
 
     }
 })
@@ -977,11 +1053,8 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
             var endpoint = 'http://localhost:8080/cliente/' + this.id;
             var opciones = { method: 'GET' };
-            
-            fetch(endpoint, opciones).then(async response => {
-                this.prueba = await response.json();
 
-                if ((this.id == "") |
+            if ((this.id == "") |
                     (this.documento == "")) {
                     Swal.fire({
                         icon: 'error',
@@ -991,8 +1064,12 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                     });
 
                 }
+            fetch(endpoint, opciones).then(async response => {
+                this.prueba = await response.json();
 
-                else if (!this.prueba) {
+                
+
+                if (!this.prueba) {
 
                     Swal.fire({
                         icon: 'error',

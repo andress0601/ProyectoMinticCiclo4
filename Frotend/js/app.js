@@ -3,95 +3,81 @@ new Vue({
     data() {
         return {
             espacios: 120,
-            id: "",
-            cellPhone: "",
-            documento: "",
-            documentoC: "",
-            placaVeh: "",
-            modelo: "",
-            color: "",
-            prueba: []
+            name: "",
+            medioPago: "",
+            hEntrada: "",
+            hSalida: "",
+            descuento: 0,
+            total: 0,
+            guardando: [],
         }
 
     },
     methods: {
-        // guardarCliente() {
-        //     if ((this.id == "") |
-        //         (this.cellPhone == "") |
-        //         (this.documento == "") |
-        //         (this.documentoC == "") |
-        //         (this.placaVeh == "") |
-        //         (this.modelo == "") |
-        //         (this.color == "")
+        traerDatos() {
 
-        //     ) {
-        //         Swal.fire({
-        //             icon: 'error',
-        //             title: 'Oops...',
-        //             text: '¡Completa Correctamente!',
-        //             // footer: '<a href="">Why do I have this issue?</a>'
-        //         });
+            var endpoint = 'http://localhost:8080/toPrint/buscar/' + this.name;
+            var opciones = { method: 'GET' };
 
+            if (this.name == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '¡completa el campo!',
 
+                });
 
-        //     } else if (this.documento != this.documentoC) {
-        //         Swal.fire({
-        //             icon: 'error',
-        //             title: 'Oops...',
-        //             text: '¡Documentos no coinciden!',
-        //             // footer: '<a href="">Why do I have this issue?</a>'
-        //         });
+            }
+            fetch(endpoint, opciones).then(async response => {
+                this.guardando = await response.json();
+                console.log(this.guardando);
+                if (!this.guardando ) {
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: '¡No hay ningún resultado de tu búsqueda!',
+                    });
 
-        //     } else {
-        //         //alert("metodo credado");
-        //         const endpoint = "http://localhost:8080/cliente";
-        //         const opciones = {
-        //             method: 'POST',
-        //             headers: { 'Content-Type': 'application/json' },
-        //             body: JSON.stringify({ id: this.id, cellPhone: this.cellPhone, documento: this.documento, documentoC: this.documentoC, placaVeh: this.placaVeh, modelo: this.modelo, color: this.color })
+                   
+                    
+                } else {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `Generando tu factura !!` + this.name,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    
+                }
+            });
 
-        //         };
+            // if (!this.guardando) {
 
-        //         fetch(endpoint, opciones).then(async response => {
-        //             //this.respuesta= await Response.json();
-
-        //             Swal.fire({
-        //                 position: 'top-end',
-        //                 icon: 'success',
-        //                 title: 'Cliente guardado',
-        //                 showConfirmButton: false,
-        //                 timer: 2500
-        //             })
-
-        //         });
-        //     }
-        // },
-       
+            //     Swal.fire({
+            //         icon: 'error',
+            //         title: 'Oops...',
+            //         text: '¡No hay ningún resultado de tu búsqueda!',
+            //     });
 
 
+            // } else {
+            //     Swal.fire({
+            //         position: 'top-end',
+            //         icon: 'success',
+            //         title: `Generando tu factura !!` + this.name,
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     });
+            // }
 
 
-
-
+        }
 
 
     }
-    //solicitud por get
-    // consultarCliente(){
-    //     endpoint="http://localhost:8080/cliente";
-    //     fetch(endpoint).then(async response=>{
-    //         // Swal.fire({
-    //         //     position: 'top-center',
-    //         //     icon: 'success',
-    //         //     title: 'Mostrando tus registros',
-    //         //     showConfirmButton: true,
-    //         //     timer: 1500
-    //         //   })
-    //         alert("Mostrando tus registros");
-    //     this.datosConsulta= await response.json();
 
-    //     });
-    // },
 
 
 

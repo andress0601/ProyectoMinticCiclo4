@@ -29,4 +29,7 @@ public class facturaServicio {
     public ArrayList<facturaModelo> bring(){
         return (ArrayList<facturaModelo>) invoice.findAll();
     }
+     public ArrayList<facturaModelo> obtenerfacturaPorName(String name){
+       return invoice.findByName(name);
+    }
 }

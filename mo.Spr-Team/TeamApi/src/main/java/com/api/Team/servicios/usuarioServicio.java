@@ -50,9 +50,7 @@ public class usuarioServicio{
         return repo.findById(id);//lo utilizamos para traer toda la información específica
     }
     
-//    public ArrayList<usuarioModelo> obtenerClientePorName(String name){
-//        return repo.findByName(name);
-//    }
+//   
     
 //    public boolean validar(){
 //        boolean valid= false;
