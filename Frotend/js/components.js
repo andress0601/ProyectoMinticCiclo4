@@ -147,10 +147,7 @@ Vue.component('tarifa', {
                                 <p></p>
                             </div>
                             <div>
-                                <button
-                                    class="w-full inline rounded-full mb-2 text-sm bg-gray-900 px-40 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    QUIERO PARQUEAR 
-                                </button>
+                            
                                
                             </div>
                         </div>
@@ -389,6 +386,7 @@ Vue.component('factura', {
 </body>
     </div>
     `,
+    
     methods: {
         traerDatos() {
 
@@ -448,7 +446,7 @@ Vue.component('lugares', {
     },
     data() {
         return {
-            espacios: 120,
+          
             vehiculos: {}
         }
     },
@@ -1009,6 +1007,41 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                             </button>
                         </div>
 
+                        <div>
+                        <table border="1">
+                        
+                        <thead>
+                         <tr>
+                          <th>documento</th>
+                          <th>ConfirmDocument</th>
+                          <th>Username</th>
+                          <th>cellPhone</th>
+                          <th>Placa Veh</th>
+                          <th>Modelo</th>
+                          <th>Color</th>
+                          
+                  
+                         </tr>
+                       </thead>
+                  
+                       <tbody>
+                  
+                       <tr v-for="cliente in datos">
+                  
+                       <td>{{ cliente.id }}</td>
+                       <td>{{ cliente.documentoC }}</td>
+                       <td>{{ cliente.username }}</td>
+                       <td>{{ cliente.cellPhone }}</td>
+                       <td>{{ cliente.placaVeh }}</td>
+                       <td>{{ cliente.modelo }}</td>
+                       <td>{{ cliente.color }}</td>
+                  
+                       </tr>
+                  
+                       </tbody>
+                       </table>
+                        </div>
+
                         
                         <div class="text-center">
                             <h3
@@ -1071,6 +1104,7 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
         }
 
+        
     }
 })
 
@@ -1281,7 +1315,8 @@ new Vue({
     el: '#componentes',
     data() {
         return {
-            menu: 0,
+            mostrar: 0,
         }
-    }
+    },
+    
 })
