@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -57,7 +58,7 @@ public class lugaresControlador {
     public Optional<lugaresModelo> busquedaLugarId(@PathVariable("id")String id){
         return serv.busquedaLugarId(id);
     }
-
+    
 }
 //    @GetMapping(path="/buscar/{name}")//búsqueda especifíca
 //    public ArrayList<usuarioModelo> obtenerporName(@PathVariable("name")String name){

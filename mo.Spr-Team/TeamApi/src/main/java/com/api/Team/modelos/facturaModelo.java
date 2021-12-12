@@ -10,12 +10,29 @@ package com.api.Team.modelos;
  * @author admin
  */
 public class facturaModelo {
+    
+    private String nit;
     private String name;
+    private String tel;
+    
+    private String placa;
+    private String modelo;
+    private String color;
+    
     private String medioPago;
     private String hEntrada;
     private String hSalida;
+    
     private double descuento;
     private double total;
+
+    public String getNit() {
+        return nit;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
 
     public String getName() {
         return name;
@@ -25,7 +42,37 @@ public class facturaModelo {
         this.name = name;
     }
 
-  
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public String getMedioPago() {
         return medioPago;
@@ -66,5 +113,8 @@ public class facturaModelo {
     public void setTotal(double total) {
         this.total = total;
     }
-           
+    
+    
+
+
 }

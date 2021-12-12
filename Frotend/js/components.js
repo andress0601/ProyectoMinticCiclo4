@@ -6,165 +6,254 @@ Vue.component('tarifa', {
 
         }
     },
-    template: `<div>
-    <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
-        type="image">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Home</title>
-
-    
-
-</head>
-
-<body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
-    style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg)">
-
-    <header>
-
-
-    </header>
-
+    template: `<div>   
     <div class="container mx-auto">
-        <div class="flex justify-center px-40 my-12 py-10 ">
+                    <div class="flex justify-center px-40 my-12 py-10 ">
+            
+                        <div class="w-full xl:w-3/4 lg:w-10/12 flex">
 
-            <div class="w-full xl:w-3/4 lg:w-10/12 flex">
+                            <div class="px-8 pt-6 pb-8 mb-4 bg-blue-400 border border-gray-900 rounded">
 
-                <!--min-h-screen flex flex-col justify-center sm:py-2-->
-                <div class="px-7 py-3 bg-red-600">
-
-                    <div class="px-5 py-7 bg-yellow-400">
-                        <h1 style="font-size: 40pt;" class="text-white text-center  md:mb-4 bg-gray-900 hover:bg-gray-500">TARIFAS PARQUEADERO</h1>
-
-                        <div class="mb-4 md:flex md:justify-between">
-                            <div class="mb-4 md:mr-3 md:mb-0">
-                                <label
-                                    class=" w-full  px-20 py-2 pt-4  inline-block mb-2 text-center text-sm font-bold text-black hover:bg-gray-500"
-                                    for="firstName">
-                                    VEHÍCULO
-                                </label>
-                            </div>
-                            
-                            <div class="md:ml-2 mr-4 mb-0">
-                                <label
-                                    class=" w-full  px-24 py-2 pt-4  inline-block mb-2  text-sm font-bold text-black hover:bg-gray-500"
-                                    for="firstName">
-                                    HORA 
-                                </label>
-
-                            </div>
-                        </div>
-
-                        <div class="mb-4 md:flex md:justify-between">
-                            <div class="mb-4 md:mr-0 md:mb-0">
-                                <label
-                                    class=" w-full bg-white px-16 py-6  block mb-2  text-sm font-bold text-gray-700 hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Automoviles
-                                </label>
-
-                                <label
-                                    class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Camionetas
-
-                                </label>
-                                
-                                <label
-                                    class=" w-full block  mb-2 text-sm bg-white px-12 py-6 font-bold text-gray-700 hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Busetas
-
-                                </label>
-                                <label
-                                    class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Camperos
-
-                                </label>
-
-                                <label
-                                    class=" w-full block  mb-2 text-sm bg-white px-12 py-6 font-bold text-black hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Motos
-
-                                </label>
-                                <label
-                                    class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
-                                    for="firstName">
-                                    Bicicletas
-
-                                </label>
-                            </div>
-                
-                                
-                
-                                
+                                <div class="mb-4 md:flex md:justify-between">
+                                    <div class="mb-4 md:mr-3 md:mb-0">
+                                        <label
+                                            class="px-20 py-2 pt-4  inline-block mb-2 text-center text-4xl font-bold text-black "
+                                            for="firstName">
+                                            VEHÍCULO
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="md:ml-2 mr-4 mb-0">
+                                        <label
+                                            class="px-24 py-2 pt-4  inline-block mb-2  text-4xl font-bold text-black "
+                                            for="firstName">
+                                            HORA 
+                                        </label>
         
+                                    </div>
+                                </div>
 
-                            
-                            <div class="md:ml-0 mb-8 mr-3 mb-0">
-                                <label
-                                    class="w-full block  mb-2 text-sm bg-white px-24 py-6 font-bold text-gray-700 hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 2700
-                                </label>
-                               
-                                <label
-                                    class="w-full block mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 2800
-                                </label>
-                                
-                                <label
-                                    class="w-full block  mb-2 text-sm bg-white px-24 py-6 font-bold text-black hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 3000
-                                </label>
-                                
-                                <label
-                                    class="w-full block  mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 3200
-                                </label>
-                                
-                                
-                                <label
-                                    class="w-full block mb-2 text-sm bg-white px-24 py-6 font-bold text-black hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 1300
-                                </label>
-                              
-                                <label
-                                    class="w-full block  mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-                                    $ 700
-                                </label>
-                                
-                                
+                                <div class="mb-2 md:flex md:justify-between">
+                                        <div class="mb-4 md:mr-0 md:mb-0">
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-gray-700 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Automoviles
+                                            </label>
+            
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-white focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Camionetas
+            
+                                            </label>
+                                            
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-gray-700 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Busetas
+            
+                                            </label>
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-white focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Camperos
+            
+                                            </label>
+            
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-gray-700 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Motos
+            
+                                            </label>
+                                            <label
+                                            class="block mb-2 text-2xl px-12 py-6 font-bold text-white focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Bicicletas
+                                            </label>
+                                        </div>
+
+                                        <div class="md:ml-0 mb-8 mr-3 mb-0">
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-gray-700 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                $ 2.700
+                                            </label>
+            
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-white focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                $ 2.800
+            
+                                            </label>
+                                            
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-gray-700 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                $ 3.000
+            
+                                            </label>
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-white focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                $ 3.200
+            
+                                            </label>
+            
+                                            <label
+                                                class="block mb-2 text-2xl px-12 py-6 font-bold text-gray-700 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                $ 1.300
+            
+                                            </label>
+                                            <label
+                                            class="block mb-2 text-2xl px-12 py-6 font-bold text-white focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                $ 700
+                                            </label>
+                                        </div>
+
+
+
                             </div>
                             
+                                
+                                
+                            <!--
+                            
+                            <div class="px-7 py-3 bg-red-600">
+            
+                                <div class="px-5 py-7 bg-yellow-400">
+                                    <h1 style="font-size: 40pt;" class="text-white text-center  md:mb-4 bg-gray-900 hover:bg-gray-500">TARIFAS PARQUEADERO</h1>
+            
+                                    <div class="mb-4 md:flex md:justify-between">
+                                        <div class="mb-4 md:mr-3 md:mb-0">
+                                            <label
+                                                class=" w-full  px-20 py-2 pt-4  inline-block mb-2 text-center text-sm font-bold text-black hover:bg-gray-500"
+                                                for="firstName">
+                                                VEHÍCULO
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="md:ml-2 mr-4 mb-0">
+                                            <label
+                                                class=" w-full  px-24 py-2 pt-4  inline-block mb-2  text-sm font-bold text-black hover:bg-gray-500"
+                                                for="firstName">
+                                                HORA 
+                                            </label>
+            
+                                        </div>
+                                    </div>
+            
+                                    <div class="mb-4 md:flex md:justify-between">
+                                        <div class="mb-4 md:mr-0 md:mb-0">
+                                            <label
+                                                class=" w-full bg-white px-16 py-6  block mb-2  text-sm font-bold text-gray-700 hover:bg-blue-500 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Automoviles
+                                            </label>
+            
+                                            <label
+                                                class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Camionetas
+            
+                                            </label>
+                                            
+                                            <label
+                                                class=" w-full block  mb-2 text-sm bg-white px-12 py-6 font-bold text-gray-700 hover:bg-blue-500 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Busetas
+            
+                                            </label>
+                                            <label
+                                                class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Camperos
+            
+                                            </label>
+            
+                                            <label
+                                                class=" w-full block  mb-2 text-sm bg-white px-12 py-6 font-bold text-black hover:bg-blue-500 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Motos
+            
+                                            </label>
+                                            <label
+                                                class=" w-full block  mb-2 text-sm bg-gray-900 px-12 py-6 font-bold text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline"
+                                                for="firstName">
+                                                Bicicletas
+            
+                                            </label>
+                                        </div>
+                            
+                                            
+                            
+                                            
+                    
+            
+                                        
+                                        <div class="md:ml-0 mb-8 mr-3 mb-0">
+                                            <label
+                                                class="w-full block  mb-2 text-sm bg-white px-24 py-6 font-bold text-gray-700 hover:bg-blue-700 focus:outline-none focus:shadow-outline">
+                                                $ 2700
+                                            </label>
+                                           
+                                            <label
+                                                class="w-full block mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
+                                                $ 2800
+                                            </label>
+                                            
+                                            <label
+                                                class="w-full block  mb-2 text-sm bg-white px-24 py-6 font-bold text-black hover:bg-blue-700 focus:outline-none focus:shadow-outline">
+                                                $ 3000
+                                            </label>
+                                            
+                                            <label
+                                                class="w-full block  mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
+                                                $ 3200
+                                            </label>
+                                            
+                                            
+                                            <label
+                                                class="w-full block mb-2 text-sm bg-white px-24 py-6 font-bold text-black hover:bg-blue-700 focus:outline-none focus:shadow-outline">
+                                                $ 1300
+                                            </label>
+                                          
+                                            <label
+                                                class="w-full block  mb-2 text-sm bg-gray-900 px-24 py-6 font-bold text-white hover:bg-blue-700 focus:outline-none focus:shadow-outline">
+                                                $ 700
+                                            </label>
+                                            
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="mb-6 ml-3 mr-16 md:flex md:justify-between">
+                                        <div>
+                                            <p></p>
+                                        </div>
+                                        <div>
+                                        
+                                           
+                                        </div>
+                                    </div>
+            
+            
+            
+            
+                                </div>
+            
+            
+                            </div>
+                        -->
                         </div>
-                        <div class="mb-6 ml-3 mr-16 md:flex md:justify-between">
-                            <div>
-                                <p></p>
-                            </div>
-                            <div>
-                            
-                               
-                            </div>
-                        </div>
-
-
-
-
                     </div>
-
-
+            
+                  
                 </div>
-            </div>
-        </div>
-
-      
-    </div>
-    </body>
+                </div>
     </div>
     `,
     methods: {
@@ -188,26 +277,8 @@ Vue.component('factura', {
         }
     },
     template: `<div>
-    
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
-    type="image">
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<title>Factura</title>
-</head>
-
-<body>
-
-
-
-
     <div class="bg-fixed bg-cover bg-center bg-no-repeat h-full w-full lg:p-8"
-        style="
-      background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg);     ">
+          >
         <div class="container mx-auto">
             <div class="min-h-screen flex flex-col justify-center sm:py-4">
                 <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
@@ -380,10 +451,6 @@ Vue.component('factura', {
 
         </div>
     </div>
-    
-
-
-</body>
     </div>
     `,
     
@@ -935,7 +1002,12 @@ Vue.component('lugares', {
             fetch(endpoint, opciones).then(async response => {
                 this.vehiculos = await response.json();
             });
+
+            
+
         }
+
+
     }
 })
 
@@ -952,20 +1024,6 @@ Vue.component('login', {
 
     template: `
     <div>
-    
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png"
-    type="image">
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<title>Login</title>
-</head>
-<!-- component -->
-
-<body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
-style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg)">
 <!-- Container -->
 
 
@@ -985,16 +1043,16 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
 
                 <div class="w-full lg:w-8/12 bg-white p-5 rounded-lg lg:rounded-l-none">
 
-                    <h3 class="pt-4 mb-3 text-2xl text-center">INGRESA!</h3>
+                    <h3 class="pt-4 mb-3 text-2xl text-center">Inicia sesión</h3>
                     <form class="px-8 pt-6 pb-8 mb-4 bg-blue-400 border border-gray-900 rounded">
 
                         <div class="mb-4">
                             <label class="block mb-2 text-sm  " for="email">
-                               ¡ Please write you document!
+                               ¡ Escriba su documento !
                             </label>
                             <input
                                 class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                v-model="id" type="text" placeholder="********" />
+                                v-model="id" type="text" placeholder="digite aqui" />
                         </div>
 
 
@@ -1003,50 +1061,17 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                             <button @click.prevent="validarI()"
                                 class="border-2 border-gray-900  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1"
                                 type="button">
-                                LOGIN
+                                Ingresar
                             </button>
                         </div>
 
                         <div>
-                        <table border="1">
-                        
-                        <thead>
-                         <tr>
-                          <th>documento</th>
-                          <th>ConfirmDocument</th>
-                          <th>Username</th>
-                          <th>cellPhone</th>
-                          <th>Placa Veh</th>
-                          <th>Modelo</th>
-                          <th>Color</th>
-                          
-                  
-                         </tr>
-                       </thead>
-                  
-                       <tbody>
-                  
-                       <tr v-for="cliente in datos">
-                  
-                       <td>{{ cliente.id }}</td>
-                       <td>{{ cliente.documentoC }}</td>
-                       <td>{{ cliente.username }}</td>
-                       <td>{{ cliente.cellPhone }}</td>
-                       <td>{{ cliente.placaVeh }}</td>
-                       <td>{{ cliente.modelo }}</td>
-                       <td>{{ cliente.color }}</td>
-                  
-                       </tr>
-                  
-                       </tbody>
-                       </table>
+
                         </div>
 
                         
                         <div class="text-center">
-                            <h3
-                                class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset inline-block ml-1">
-                                No tienes cuenta? Registrate!</h3>
+                            <h3>No tienes cuenta? Registrate!</h3>
                         </div>
 
                     </form>
@@ -1054,8 +1079,6 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
             </div>
         </div>
     </div>
-
-</body>
     </div>
     `,
     // mounted(){
@@ -1078,9 +1101,11 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                 var opciones = { method: 'GET' };
 
                 fetch(endpoint, opciones).then(async response => {
-
+                    
                     this.datos = await response.json();
-                    console.log(this.datos);
+                    
+                    //localStorage.setItem("usuario", this.datos[0].id );
+                    localStorage.setItem('usuario', JSON.stringify(this.datos));
 
                     if (this.datos == "") {
                         Swal.fire({
@@ -1089,17 +1114,21 @@ style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.co
                             text: '¡No hay ningún resultado de tu búsqueda!',
                         });
                     } else {
+                        
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
                             title: 'Cliente encontrado!!',
                             showConfirmButton: false,
                             timer: 1500
-                        })
+                        });
+                        location. reload();
                     }
 
                 });
             }
+
+            
 
 
         }
@@ -1124,136 +1153,90 @@ Vue.component('registro', {
         }
     },
     template: `
-    <div>
+    <div class="flex justify-center px-16 my-12">
+        <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+            <div class="w-full lg:w-8/12 p-5 rounded-lg lg:rounded-l-none">
+            
+                                <h3 class="pt-4 mb-3 text-2xl text-center">Regisro</h3>
+                                <form class="px-8 pt-6 pb-8 mb-4 bg-blue-400 border border-gray-900 rounded">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon"
-            href="https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/icono.png" type="image">
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <title>Sign up</title>
-    </head>
-    <!-- component -->
+                                    <div class="mb-2 md:flex md:justify-between">
+                                        <div class="mb-2">
+                                            <label class="block mb-2 text-sm text-white" for="username">
+                                                Nombre del cliente
+                                            </label>
+                                            <input
+                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                type="text" v-model="username" placeholder="Digite su nombre" />
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="block mb-2 text-sm text-white  " for="cellPhone">
+                                                Telefono del cliente
+                                            </label>
+                                            <input
+                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                type="text" v-model="cellPhone" placeholder="Digite su telefono" />
+                                        </div>
+            
+                                    </div>
 
-    <body class=" bg-fixed bg-cover bg-center bg-no-repeat h-768 w-full  lg:p-8"
-        style="background-image: url(https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/parqueadero2.jpg)">
-        <!-- Container -->
+                                    <div class="mb-4 md:flex md:justify-between">
+                                        <div class="mb-2  md:mb-0">
+                                            <label class="block mb-2 text-sm text-white" for="documento">
+                                                Documento del cliente
+                                            </label>
+                                            <input
+                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight   rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                type="text" placeholder="digite su documento" v-model="id" />
+                                            
+                                        </div>
+                                        <div class="md:ml-2 mb-4">
+                                            <label class="block mb-2 text-sm text-white" for="documentoC">
+                                                Confirmar documento
+                                            </label>
+                                            <input
+                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700  rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                type="text" placeholder="confirme su documento" v-model="documentoC">
+                                        </div>
+                                    </div>
+            
+                                    <h1 class="text-white mb-4">INFORMACIÓN ESTACIONAMIENTO</h1>
+                                    <div class="mb-4 ">
+                                        <label class="block mb-2 text-sm text-white  " for="Placa">
+                                            Placa Vehículo
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            type="text" placeholder="Digite la placa de su vehículo" v-model="placaVeh" />
+                                    </div>
+                                    <div class="mb-4 ">
+                                        <label class="block mb-2 text-sm text-white  " for="Modelo">
+                                            Modelo
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            type="text" placeholder="Digite el modelo de su vehiculo" v-model="modelo" />
+                                    </div>
+                                    <div class="mb-4 ">
+                                        <label class="block mb-2 text-sm text-white  ">
+                                            Color
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            type="text" placeholder="Digite el color de su vehiculo" v-model="color" />
+                                    </div>
 
-        <div class="container mx-auto">
-            <div class="flex justify-center px-6 my-12">
-                <!-- Row -->
-                <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-                    <!-- Col -->
-                    <!-- <div class="w-full h-auto bg-gray-400 hidden lg:inline lg:w-5/12 bg-cover rounded-l-lg"
-                            style="background-image: url('https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/6.jpg')"> -->
-                </div> -->
-                <!--Mejorada 1 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada1.jpg
-                        Mejorada 2 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada2.jpg
-                        Mejorada 3 https://el-sabor-de-nuestra-tierra.000webhostapp.com/Images-Parqueadero/mejorada3.jpg
-                    -->
-                <!-- Col -->
-
-                <div class="w-full lg:w-8/12 bg-transparent p-5 rounded-lg lg:rounded-l-none">
-
-                    <h3 class="pt-4 mb-3 text-2xl text-center">Registrate!</h3>
-                    <form class="px-8 pt-6 pb-8 mb-4 bg-transparent border-8 border-green-500 rounded">
-
-                        <div class="mb-2 md:flex md:justify-between">
-                            <div class="mb-2">
-                                <label class="block mb-2 text-sm text-white" for="username">
-                                    Username
-                                </label>
-                                <input
-                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    type="text" v-model="username" placeholder="Username" />
+                                    <div class="mb-4 text-center">
+                                        <button @click.prevent=" guardarCliente()"
+                                        class="border-2 border-gray-900  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1"
+                                        type="button">
+                                            Registrar cliente
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="mb-2">
-                                <label class="block mb-2 text-sm text-white  " for="cellPhone">
-                                    Cell Phone
-                                </label>
-                                <input
-                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    type="text" v-model="cellPhone" placeholder="Cell Phone" />
-                            </div>
-
-                        </div>
-
-
-                        <div class="mb-4 md:flex md:justify-between">
-                            <div class="mb-2  md:mb-0">
-                                <label class="block mb-2 text-sm text-white" for="documento">
-                                    Documento
-                                </label>
-                                <input
-                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight  border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    type="password" placeholder="********" v-model="id" />
-                                <!-- <p class="text-xs italic text-red-500">Please write your document.</p> -->
-                            </div>
-                            <div class="md:ml-2 mb-4">
-                                <label class="block mb-2 text-sm text-white" for="documentoC">
-                                    Confirm Document
-                                </label>
-                                <input
-                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    type="password" placeholder="********" v-model="documentoC">
-                            </div>
-                        </div>
-
-                        <h1 class="text-white mb-4">INFORMACIÓN ESTACIONAMIENTO</h1>
-                        <div class="mb-4 ">
-                            <label class="block mb-2 text-sm text-white  " for="Placa">
-                                Placa Vehículo
-                            </label>
-                            <input
-                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                type="text" placeholder="Placa Vehículo" v-model="placaVeh" />
-                        </div>
-                        <div class="mb-4 ">
-                            <label class="block mb-2 text-sm text-white  " for="Modelo">
-                                Modelo
-                            </label>
-                            <input
-                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                type="text" placeholder="Modelo" v-model="modelo" />
-                        </div>
-                        <div class="mb-4 ">
-                            <label class="block mb-2 text-sm text-white  ">
-                                Color
-                            </label>
-                            <input
-                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                type="text" placeholder="Color" v-model="color" />
-                        </div>
-                        <div class="mb-4 text-center">
-                            <button @click.prevent=" guardarCliente()"
-                                class="border-2 border-green-500  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1">Sign
-                                Up</button>
-                        </div>
-                        <hr class="mb-6 border-t" />
-
-                        <!-- <div class="text-center">
-                                <a
-                                    class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                                    href="./index.html"
-                                >
-                                    Already have an account? Login!
-                                </a>
-                            </div> -->
-                        <div class="text-center">
-                            <label
-                                class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset inline-block ml-1">
-                                Ya tienes cuenta? Ingresa!</label>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
         </div>
-    </body>
-</div>
-
+        </div>        
     `,
     methods: {
         guardarCliente() {
@@ -1311,12 +1294,165 @@ Vue.component('registro', {
     }
 
 })
-new Vue({
-    el: '#componentes',
+
+// ......PARQUEADERO.........................//
+
+Vue.component('parqueadero', {
+    mounted(){
+        this.lugares();
+    },
+
     data() {
         return {
-            mostrar: 0,
+            selected: '',
+            selectedLugar: '',
+            lug:{}
         }
     },
+    template: `
+    <div >
+        <p class="text-2xl ...">Seleccione metodo de pago </p>
+        <select v-model="selected" class="form-select block w-full mt-1">
+            <option>Seleccione una opcion</option>
+            <option>Efectivo</option>
+            <option>Tarjeta de credito</option>
+            <option>Vale de descuento</option>
+        </select>
+        <p class="text-2xl ...">Seleccione lugar a ocupar </p>
+        <select v-model="selectedLugar" class="form-select block w-full mt-1">
+            <option
+            v-for="unlugar in lug" :value="lugar"
+            v-if="unlugar.estado === true"
+            >{{unlugar.lugar}}</option>
+            
+        </select>
+
+        <button @click.prevent="asignarLugar()" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
+            Ocupar lugar
+        </button>
+        
+    </div>
     
+        
+        
+    `,
+    methods: {
+        asignarLugar(){
+
+            if (localStorage.usuario){
+
+                var hoy = new Date();
+                var hora = hoy.getHours() + ':' + hoy.getMinutes() ;
+
+                var usuario= [];
+                usuario = JSON.parse(localStorage.usuario);
+
+                const endpoint = "http://localhost:8080/toPrint";
+                const opciones = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    
+                    body: JSON.stringify({
+                        nit: usuario[0].documentoC,
+                        name: usuario[0].username,
+                        tel: usuario[0].cellPhone,
+                        placa: usuario[0].placaVeh,
+                        modelo: usuario[0].modelo,
+                        color: usuario[0].color,
+                        medioPago: this.selected,
+                        hEntrada: hora,
+                        hSalida: "0",
+                        descuento: 0,
+                        total: 0
+                        })
+
+                    
+                };  
+                
+                fetch(endpoint, opciones).then(async response => {
+                    //this.respuesta= await Response.json();
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Lugar asignado',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
+
+                }); 
+            }else{
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'No estas logueado!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+            
+               
+        },
+
+        lugares(){
+            var endpoint = 'http://localhost:8080/lugares/';
+            var opciones = { method: 'GET' };
+
+            fetch(endpoint, opciones).then(async response => {
+                this.lug = await response.json();
+            });
+
+        }
+    }
+
+})
+
+new Vue({
+    el: '#componentes',
+    mounted(){
+        this.estatus();
+        
+    },
+    data() {
+        return {
+            usuario:'',
+            mostrar: 0,
+            opcT:false,
+            opcL:false,
+            opcR:false,
+            opcLu:false,
+            opcF:false,
+            opcP:false,
+            opcC:false
+        }
+    },
+    methods: {
+        terminarSesion(){
+            localStorage.clear();        
+            location. reload();
+        },
+
+        estatus(){
+            if (!localStorage.usuario){
+                console.log("okey no existe");
+                this.opcT = true;
+                this.opcL = true;
+                this.opcR = true;
+                this.opcLu = false;
+                this.opcF = false;
+                this.opcP = false;
+                this.opcC = false;
+            }else{
+                console.log("okey existe");
+                this.opcT = false;
+                this.opcL = false;
+                this.opcR = false;
+                this.opcLu = true;
+                this.opcF = true;
+                this.opcP = true;
+                this.opcC = true;
+            }
+        }
+    },
+
 })
