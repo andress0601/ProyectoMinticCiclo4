@@ -6,7 +6,6 @@
 package com.api.Team.repositorios;
 
 import com.api.Team.modelos.facturaModelo;
-import java.util.ArrayList;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author admin
  */
 @Repository
-public interface facturaRepo extends MongoRepository<facturaModelo, Long> {
-   ArrayList<facturaModelo> findByName(String name);
+public interface facturaRepo extends MongoRepository<facturaModelo, String>{
+   //ArrayList<facturaModelo> findByName(String nit);
+    //public ArrayList<facturaModelo> findById(String nit);
 }

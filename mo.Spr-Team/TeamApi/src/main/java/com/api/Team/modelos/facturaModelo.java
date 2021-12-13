@@ -11,7 +11,7 @@ package com.api.Team.modelos;
  */
 public class facturaModelo {
     
-    private String nit;
+    private String id;
     private String name;
     private String tel;
     
@@ -26,12 +26,12 @@ public class facturaModelo {
     private double descuento;
     private double total;
 
-    public String getNit() {
-        return nit;
+    public String getId() {
+        return id;
     }
 
-    public void setNit(String nit) {
-        this.nit = nit;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -113,8 +113,5 @@ public class facturaModelo {
     public void setTotal(double total) {
         this.total = total;
     }
-    
-    
-
 
 }
