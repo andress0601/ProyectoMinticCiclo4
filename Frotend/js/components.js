@@ -267,13 +267,16 @@ Vue.component('tarifa', {
 Vue.component('factura', {
     data() {
         return {
-            name: "",
-            medioPago: "",
-            hEntrada: "",
-            hSalida: "",
-            descuento: 0,
-            total: 0,
-            guardando: [],
+            nit: "",
+            name:"",
+            tel:"",
+            placa:"",
+            modelo:"",
+            color:"",
+            medioPago:"",
+            hEntrada:"",
+            
+            mostrar: [],
         }
     },
     template: `<div>
@@ -282,7 +285,7 @@ Vue.component('factura', {
         <div class="container mx-auto">
             <div class="min-h-screen flex flex-col justify-center sm:py-4">
                 <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
-                    <div class="px-8 py-12 bg-white w-full">
+                    <div class="px-8 py-12 bg-white border border-gray-900 rounded w-full">
                         <div class="mb-4 md:mr-2 md:mb-0">
                             <h1>------------------------------------------</h1>
                             <p class="italic focus:underline font-bold
@@ -312,20 +315,25 @@ Vue.component('factura', {
 
                                 <label class="block mb-0 text-sm text-left text-gray-700">
                                     <div class="flex space-x-9 italic">
-                                        <div>FECHA: </div>
-                                        <div>HORA: </div>
+                                        <div class="font-semibold">FECHA: </div>
+                                         <div class="flex space-x-2">
+                                            <div class="font-semibold">HORA:</div>
+                                            <div v-for="cliente in mostrar">{{cliente.hEntrada}}</div>
+                                         </div>
                                     </div>
                                 </label>
                             </div>
                             <label class="block mb-0 text-sm text-left text-gray-700">
                                 <div class="flex space-x-4">
                                     <div class="font-semibold">NIT CLIENTE:</div>
-                                    <div></div>
+                                    <div v-for="cliente in mostrar">{{cliente.nit}}</div>
                                 </div>
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700">
-                                <div class="font-semibold" >NOMBRE CLIENTE:</div>
-                                <div></div>
+                             <div class="flex space-x-3">
+                                <div class="font-semibold">NOMBRE CLIENTE:</div>
+                                <div v-for="cliente in mostrar">{{cliente.name}}</div>
+                             </div>
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700">
                                 <div>
@@ -333,16 +341,19 @@ Vue.component('factura', {
                                 </div>
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700">
-                                <div class="flex space-x-2">
-                                    <div  class="font-semibold">IT.CC:</div>
-                                    <div></div>
+                                <div class="flex space-x-3">
+                               
+                                <div class="font-semibold">I.T:</div>
+                                <div v-for="cliente in mostrar">{{cliente.nit}}</div>
+                          
+                                   
                                 </div>
                             </label>
 
                             <label class="block mb-6 text-sm text-left text-gray-700">
                                 <div class="flex space-x-2">
                                     <div  class="font-semibold">TEL CEL:</div>
-                                    <div> </div>
+                                    <div v-for="cliente in mostrar">{{cliente.tel}}</div>
                                 </div>
                             </label>
                             <label class="block mb-0 text-sm text-left text-gray-700" for="firstName">
@@ -357,19 +368,27 @@ Vue.component('factura', {
                             </label>
 
                             <label class="block mb-0 text-sm text-left text-gray-700">
-                                <div class="font-semibold">PLACA :</div>
-                                <div></div>
+                            <div class="flex space-x-3">
+                                <div class="font-semibold">PLACA:</div>
+                                <div v-for="cliente in mostrar">{{cliente.placa}}</div>
+                            </div>
                             </label>
 
                             <label class="block mb-0 text-sm text-left text-gray-700">
-                                <div class="font-semibold">MODELO :</div>
-                                <div></div>
+                            <div class="flex space-x-3">
+                                <div class="font-semibold">MODELO:</div>
+                                <div v-for="cliente in mostrar">{{cliente.modelo}}</div>
+                            </div>
+                               
 
                             </label>
 
                             <label class="block mb-0 text-sm text-left text-gray-700">
-                                <div class="font-semibold">COLOR :</div>
-                                <div></div>
+                            <div class="flex space-x-3">
+                                <div class="font-semibold">COLOR:</div>
+                                <div v-for="cliente in mostrar">{{cliente.color}}</div>
+                             </div>
+                             
                             </label>
                             <label class="block mb-6 text-sm text-left text-gray-700">
                                 <div>
@@ -385,21 +404,16 @@ Vue.component('factura', {
                             <label class="block mb-0 text-sm text-left text-gray-700" for="firstName">
                                 <div class="flex space-x-3">
                                     <div class="font-semibold">MEDIO DE PAGO:</div>
-                                    <div></div>
+                                    <div v-for="cliente in mostrar">{{cliente.medioPago}}</div>
                                 </div>
                             </label>
 
-                            <label class="block mb-0 text-sm text-left text-gray-700" for="firstName">
-                                <div class="flex space-x-3">
-                                    <div class="font-semibold">CATEGORÍA:</div>
-                                    <div></div>
-                                </div>
-                            </label>
+                            
 
                             <label class="block mb-0 text-sm text-left text-gray-700" for="firstName">
                                 <div class="flex space-x-3">
                                     <div class="font-semibold">HORA ENTRADA:</div>
-                                    <div></div>
+                                    <div v-for="cliente in mostrar">{{cliente.hEntrada}}</div>
                                 </div>
                             </label>
 
@@ -429,20 +443,7 @@ Vue.component('factura', {
                                     HA SIDO UN GUSTO ATENDERTE ¡GRACIAS!
                                 </h1>
                             </label>
-                            <label class="block mb-2 text-sm text-white">
-                                búsqueda
-                    
-                            </label>
-                            <input
-                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                type="text" v-model="name" placeholder="name" />
-                            <div class="mb-4 text-center">
-                    
-                                <button @click.prevent="traerDatos()"
-                                    class="border-2 border-gray-900  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1">
-                    
-                                    validar
-                                </button>
+                           
 
                         </div>
                     </div>
@@ -453,47 +454,33 @@ Vue.component('factura', {
     </div>
     </div>
     `,
+
+    mounted(){
+        this.traerDatos();
+    },
     
     methods: {
         traerDatos() {
 
-            if (this.name == "") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: '¡llena todos los campos!',
-
-                });
-                var endpoint = 'http://localhost:8080/toPrint/buscar/' + this.name;
+                var usuario= []
+                usuario = JSON.parse(localStorage.usuario);
+                var endpoint = 'http://localhost:8080/toPrint/extraer/'+usuario[0].documentoC ;
                 var opciones = { method: 'GET' };
-
-            }
-
 
 
             fetch(endpoint, opciones).then(async response => {
-                this.guardando = await response.json();
+                this.mostrar = await response.json();
+            //   localStorage.getItem('usuario', JSON.stringify(this.mostrar));
+                console.log(this.mostrar);
 
-                if (!this.guardando) {
-
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: '¡No hay ningún resultado de tu búsqueda!',
-                    });
-
-                } else {
-
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: `Bienvenid@ !!` + this.name,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-
-                }
-
+            // localStorage.getItem('id')
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Gracias por confiar en nosotros!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             });
 
 
@@ -1157,7 +1144,7 @@ Vue.component('registro', {
         <div class="w-full xl:w-3/4 lg:w-11/12 flex">
             <div class="w-full lg:w-8/12 p-5 rounded-lg lg:rounded-l-none">
             
-                                <h3 class="pt-4 mb-3 text-2xl text-center">Regisro</h3>
+                                <h3 class="pt-4 mb-3 text-2xl text-center " style="font-size:20pt;">Registro</h3>
                                 <form class="px-8 pt-6 pb-8 mb-4 bg-blue-400 border border-gray-900 rounded">
 
                                     <div class="mb-2 md:flex md:justify-between">
@@ -1166,7 +1153,7 @@ Vue.component('registro', {
                                                 Nombre del cliente
                                             </label>
                                             <input
-                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                class="border-2 border-gray-900  w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                 type="text" v-model="username" placeholder="Digite su nombre" />
                                         </div>
                                         <div class="mb-2">
@@ -1174,7 +1161,7 @@ Vue.component('registro', {
                                                 Telefono del cliente
                                             </label>
                                             <input
-                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                class="border-2 border-gray-900 w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                 type="text" v-model="cellPhone" placeholder="Digite su telefono" />
                                         </div>
             
@@ -1186,7 +1173,7 @@ Vue.component('registro', {
                                                 Documento del cliente
                                             </label>
                                             <input
-                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight   rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                class="border border-gray-900 w-full px-3 py-2 mb-3 text-sm leading-tight   rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                 type="text" placeholder="digite su documento" v-model="id" />
                                             
                                         </div>
@@ -1195,7 +1182,7 @@ Vue.component('registro', {
                                                 Confirmar documento
                                             </label>
                                             <input
-                                                class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700  rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                class="border border-gray-900 w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700  rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                 type="text" placeholder="confirme su documento" v-model="documentoC">
                                         </div>
                                     </div>
@@ -1206,7 +1193,7 @@ Vue.component('registro', {
                                             Placa Vehículo
                                         </label>
                                         <input
-                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            class="border-2 border-gray-900 w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                             type="text" placeholder="Digite la placa de su vehículo" v-model="placaVeh" />
                                     </div>
                                     <div class="mb-4 ">
@@ -1214,7 +1201,7 @@ Vue.component('registro', {
                                             Modelo
                                         </label>
                                         <input
-                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            class="border-2 border-gray-900 w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                             type="text" placeholder="Digite el modelo de su vehiculo" v-model="modelo" />
                                     </div>
                                     <div class="mb-4 ">
@@ -1222,7 +1209,7 @@ Vue.component('registro', {
                                             Color
                                         </label>
                                         <input
-                                            class="w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            class="border-2 border-gray-900 w-full px-3 py-2 mb-3 text-sm leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                             type="text" placeholder="Digite el color de su vehiculo" v-model="color" />
                                     </div>
 
@@ -1311,15 +1298,15 @@ Vue.component('parqueadero', {
     },
     template: `
     <div >
-        <p class="text-2xl ...">Seleccione metodo de pago </p>
-        <select v-model="selected" class="form-select block w-full mt-1">
+        <p class="text-2xl ... mb-2">Seleccione metodo de pago </p>
+        <select v-model="selected" class="form-select block w-full mt-1 mb-3">
             <option>Seleccione una opcion</option>
             <option>Efectivo</option>
             <option>Tarjeta de credito</option>
             <option>Vale de descuento</option>
         </select>
-        <p class="text-2xl ...">Seleccione lugar a ocupar </p>
-        <select v-model="selectedLugar" class="form-select block w-full mt-1">
+        <p class="text-2xl ... mb-3">Seleccione lugar a ocupar </p>
+        <select v-model="selectedLugar" class="form-select block w-full mt-1 mb-5">
             <option
             v-for="unlugar in lug" :value="lugar"
             v-if="unlugar.estado === true"
@@ -1327,7 +1314,7 @@ Vue.component('parqueadero', {
             
         </select>
 
-        <button @click.prevent="asignarLugar()" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
+        <button @click.prevent="asignarLugar()" class="border-2 border-gray-900  transition duration-200 mx-5 px-10 py-4 cursor-pointer font-normal text-sm rounded-lg text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset  inline-block ml-1 rounded" >
             Ocupar lugar
         </button>
         

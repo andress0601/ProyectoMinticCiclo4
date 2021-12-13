@@ -10,9 +10,9 @@ package com.api.Team.modelos;
  * @author admin
  */
 public class facturaModelo {
-    
-    private String id;
+  
     private String name;
+    private String nit;
     private String tel;
     
     private String placa;
@@ -26,12 +26,12 @@ public class facturaModelo {
     private double descuento;
     private double total;
 
-    public String getId() {
-        return id;
+    public String getNit() {
+        return nit;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setNit(String nit) {
+        this.nit = nit;
     }
 
     public String getName() {
@@ -113,5 +113,8 @@ public class facturaModelo {
     public void setTotal(double total) {
         this.total = total;
     }
+    
+    
+
 
 }

@@ -1,55 +1,39 @@
-
-
-package com.api.Team.servicios;
-
-/**
- *
- * @author pc
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package com.api.Team.servicios;
 
 import com.api.Team.modelos.facturaModelo;
 import com.api.Team.repositorios.facturaRepo;
 import java.util.ArrayList;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-
+/**
+ *
+ * @author admin
+ */
 @Service
 public class facturaServicio {
     @Autowired
-    private facturaRepo repo;//objeto
-    private facturaModelo factura;
     
+    private facturaRepo invoice;
     
- 
+    public facturaModelo savef(facturaModelo factura){
+        return invoice.save(factura);
+    }
     
-    public facturaModelo guardarFactura(facturaModelo factura){
-        return repo.save(factura);
+    public ArrayList<facturaModelo> bring(){
+        return (ArrayList<facturaModelo>) invoice.findAll();
+    }
+     public ArrayList<facturaModelo> obtenerfacturaPorName(String name){
+       return invoice.findByName(name);
     }
      
-    public ArrayList<facturaModelo> obtenerTodos(){
-        
-        return (ArrayList<facturaModelo>) repo.findAll();
-        
-    }
-    
-    public boolean borrarFactura(Long id){
-        /*
-        if(repo.existsById(id)){
-            repo.deleteById(id);
-            return true;
-        }
-        else{
-            return false;
-        }
-        */
-        return false;
-    }
-    
-    public Optional<facturaModelo> busquedaFacturaId(String nit){
-        return repo.findById(nit);//lo utilizamos para traer toda la información específica
-    }
+     public ArrayList<facturaModelo> obtenerFacturaNit(String nit){
+         return invoice.findByNit(nit);
+     }
 }
-  
